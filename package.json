@@ -1,0 +1,11 @@
+{
+  "name": "line-break",
+  "version": "1.0.0",
+  "description": "Dojo puzzle challange - Line break (Quebra de linha)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maycon Santos",
+  "license": "ISC"
+}
