@@ -4,6 +4,7 @@
   "description": "Dojo puzzle challange - Line break (Quebra de linha)",
   "main": "index.js",
   "scripts": {
+    "dev": "tsc src/index.ts --watch",
     "test": "jest"
   },
   "author": "Maycon Santos",
