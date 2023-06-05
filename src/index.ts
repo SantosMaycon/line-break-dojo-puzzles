@@ -2,31 +2,19 @@ export function lineBreak(phrase: string, numberOfColumns: number): string {
   if (numberOfColumns < 1)
     return 'The number of columns should be greater than one.';
 
-  const listOfPhrase = phrase.split(' ');
-  
-  const newPhrase: string[] = [];
-  let count: string;
+  const listOfWords = phrase.split(' ');
 
-  listOfPhrase.forEach((phrase, index) => {
-    if ((count + phrase).length > numberOfColumns) {
-      newPhrase.push(count.concat('\n'));
-      count = phrase;
+  let result = '';
+  let line = '';
 
-      if (listOfPhrase.length === index + 1) {
-        newPhrase.push(count);
-      }
+  for (const word of listOfWords) {
+    if ((line + word).length < numberOfColumns) {
+      line += word + ' ';
     } else {
-      if (index === 0) {
-        count = phrase;
-      } else {
-        count = count.concat(' ' + phrase);
-      }
-
-      if (listOfPhrase.length === index + 1) {
-        newPhrase.push(count);
-      }
+      result += line.trim() + '\n';
+      line = word + ' ';
     }
-  });
+  }
 
-  return newPhrase.join('');
+  return result + line.trim();
 }
